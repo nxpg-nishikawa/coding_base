@@ -1,0 +1,27 @@
+mixin l-contentsWidth
+	.l-contentsWidth
+		block
+
+mixin l-columnBlock
+	.l-columnBlock
+		block
+
+mixin l-columnBox
+	.l-columnBox
+		block
+
+mixin l-spWrapper
+	.l-spWrapper
+		block
+
+mixin l-markupBlock
+	.l-markupBlock
+		block
+
+mixin p-markupBtn(text)
+	p.p-markupBtn(class= text)
+		!= text
+	.source
+		pre
+			code
+				block

@@ -60,7 +60,7 @@ fontSize(size) {
 }
 
 lastReset()
-	h1, h2, h3, h4, h5, h6, p, div dt, dd, figure, table
+	*
 		&:last-child
 			margin-bottom: 0;
 
@@ -80,11 +80,9 @@ fontPc(font_size)
 	font-size: font_size * 1px;
 	font-size: vwpc(font_size);
 
-.COMPONENT_MARGIN
-	margin-bottom 60px
+marginBottom(MARGIN)
+	margin-bottom MARGIN * 1px
+	lastReset()
 
 	+MQ(SP_RES_WID)
-		margin-bottom 40px
-		
-	&:last-child
-		margin-bottom 0
+		margin-bottom (MARGIN / 2) * 1px

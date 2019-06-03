@@ -99,7 +99,7 @@
                             .textArea
                                 h3.title タイトル            <= 汎用class名
                                 p.text テキスト              <= 汎用class名
-                                .p-btnSet.is-white          <= 接頭詞+パーツ名.ステート名
+                                .m-btnSet.is-white          <= 接頭詞+パーツ名.ステート名
                                     a(href="")
                                         span ボタン
 

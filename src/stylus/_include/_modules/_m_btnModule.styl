@@ -1,0 +1,29 @@
+
+// ボタンセット01 ---------------------------------------------------
+.m-btnModule01
+	marginBottom(20)
+	a
+		display block
+		position relative
+		marginBottom(30)
+		padding 20px 40px 20px 20px
+		color inherit
+		border 1px solid POINT_COLOR01
+		box-sizing border-box
+		text-decoration none
+
+		&:after
+			content ""
+			display block
+			position absolute
+			top 50%
+			right 10px
+
+			width 11px
+			height 8px
+
+			background-image url('../images/common/common_icon_arrow01.png')
+			background-repeat no-repeat
+			background-size cover
+
+			transform translate3d(0, -50%, 0)

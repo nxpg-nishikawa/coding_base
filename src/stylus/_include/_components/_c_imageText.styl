@@ -1,0 +1,40 @@
+.c-imageText
+	marginBottom(60)
+
+	+MQ(SP_RES_WID)
+		display block !important
+
+	&.is-imageRight
+		display flex
+		.imageBlock
+			order 1
+			padding-left 20px
+
+	&.is-imageLeft
+		display flex
+		.imageBlock
+			padding-right 20px
+	
+	&.is-imageCenter
+		.imageBlock
+			margin-bottom 20px
+			text-align center
+
+			figcaption
+				text-align left
+			
+	.imageBlock
+		
+		+MQ(SP_RES_WID)
+			width 100% !important
+			padding 0 !important
+	
+	
+	.m-imageSet
+		+MQ(SP_RES_WID)
+			width 100% !important
+		
+		img
+			max-width inherit
+			+MQ(SP_RES_WID)
+				max-width 100%

@@ -4,15 +4,342 @@ block vars
 	- var KEY = "list"
 	- var PAGE = PAGES[KEY]
 	- var RELATIVE_PATH = PAGE.PATH
-	- var header = "true"
-	- var footer = "true"
+	- var header = "false"
+	- var footer = "false"
 	- var side = ["false","left"]
-	
-block contents
-	section.l-layout-sectionWrapper
 
-		+l-layout-contentsWidth
-			h1.m-module-borderBottomTitle01 ページリスト
-			ul.m-module-linkListSet
-				li
-					a(href="home.html") トップ
+
+block contents
+	script.
+		$(function(){
+			$(".l-markupBlock").on('click','.p-markupBtn',function(){
+				$(this).next().slideToggle();
+			})
+			$(".l-markupBlock").each(function(){
+				var str = $(this).find('.pug+.source code').text();
+				
+				str = replaceAll(str, '                        ', '');
+				$(this).find('.pug+.source code').text(str);
+			});
+			function replaceAll(str, beforeStr, afterStr){
+				var reg = new RegExp(beforeStr, "g");
+				return str.replace(reg, afterStr);
+			}
+		});
+
+	+l-columnBlock
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span デフォルトタグ
+
+					+l-markupBlock
+						p!= DUMMY_TEXT_400
+
+						ul.is-disc
+							li!= DUMMY_TEXT_20
+							li!= DUMMY_TEXT_50
+								ul
+									li!= DUMMY_TEXT_20
+									li!= DUMMY_TEXT_20
+										ul
+											li!= DUMMY_TEXT_20
+											li!= DUMMY_TEXT_20
+						
+						ol.is-decimal
+							li!= DUMMY_TEXT_20
+							li!= DUMMY_TEXT_50
+								ol
+									li!= DUMMY_TEXT_20
+									li!= DUMMY_TEXT_50
+										ol
+											li!= DUMMY_TEXT_20
+											li!= DUMMY_TEXT_50
+
+						+p-markupBtn('pug').
+							p!= DUMMY_TEXT_400
+
+							ul.is-disc
+								li!= DUMMY_TEXT_20
+								li!= DUMMY_TEXT_50
+									ul
+										li!= DUMMY_TEXT_20
+										li!= DUMMY_TEXT_20
+											ul
+												li!= DUMMY_TEXT_20
+												li!= DUMMY_TEXT_20
+							
+							ol.is-decimal
+								li!= DUMMY_TEXT_20
+								li!= DUMMY_TEXT_50
+									ol
+										li!= DUMMY_TEXT_20
+										li!= DUMMY_TEXT_50
+											ol
+												li!= DUMMY_TEXT_20
+												li!= DUMMY_TEXT_50
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_m_defaultTags.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span ボーダーボトムタイトル01
+
+					+l-markupBlock
+						h3.m-title-borderBottom01
+							span タイトル
+
+						+p-markupBtn('pug').
+							h3.m-title-borderBottom01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderBottom01.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span ボーダートップタイトル01
+					
+					+l-markupBlock
+						h3.m-title-borderTop01
+							span タイトル
+
+						+p-markupBtn('pug').
+							h3.m-title-borderTop01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderTop01.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span ボーダーライトタイトル01
+					
+					+l-markupBlock
+						h3.m-title-borderRight01
+							span タイトル
+
+						+p-markupBtn('pug').
+							h3.m-title-borderRight01
+								span タイトル
+						
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderRight01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span ボーダーレフトタイトル01
+					
+					+l-markupBlock
+						h3.m-title-borderLeft01
+							span タイトル
+
+						+p-markupBtn('pug').
+							h3.m-title-borderLeft01
+								span タイトル
+						
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderLeft01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span 強調タイトル01
+					
+					+l-markupBlock
+						h3.m-title-boldLarge01
+							span タイトル
+
+						+p-markupBtn('pug').
+							h3.m-title-boldLarge01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_boldLarge01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span 背景タイトル01
+					
+					+l-markupBlock
+						h3.m-title-bg01
+							span タイトル
+
+						+p-markupBtn('pug').
+							h3.m-title-bg01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_bg01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span 複数文字タイトル01
+
+					+l-markupBlock
+						h3.m-title-twoWord01
+							span.is-large ラージタイトル
+							span.is-small スモールタイトル
+
+						+p-markupBtn('pug').
+							h3.m-title-twoWord01
+								span.is-large ラージタイトル
+								span.is-small スモールタイトル
+						
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_twoWord01.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span ボタンモジュール01
+					
+					+l-markupBlock
+						p.m-btnModule01
+							a(href=".pdf")
+								span ボタン
+
+						+p-markupBtn('pug').
+							p.m-btnModule01
+								a(href="") 拡張子でアイコン切り分け
+									span ボタン
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_m_btnModule.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span 画像モジュール01
+					
+					+l-markupBlock
+						.m-imageSet
+							figure.image
+								img(src="https://placehold.jp/150x150.png", alt="")
+								figcaption テキストが入ります
+						.m-imageSet
+							p.image
+								img(src="https://placehold.jp/150x150.png", alt="")
+
+						+p-markupBtn('pug').
+							.m-imageSet
+								figure.image p.image
+									img(src="画像", alt="")
+									figcaption テキスト
+							
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_m_imageSet.styl
+
+
+
+	+l-columnBlock
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span 画像コンポーネント01
+					
+					+l-markupBlock
+						.c-imageSet
+							ul.box.is-three
+								li
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+									p!= DUMMY_TEXT_50
+								li
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+									p!= DUMMY_TEXT_50
+								li
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+									p!= DUMMY_TEXT_50
+								li
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+									p!= DUMMY_TEXT_50
+								li
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+									p!= DUMMY_TEXT_50
+
+						+p-markupBtn('pug').
+							.c-imageComponent
+								ul.box.ステートクラス
+									li
+										.m-imageSet
+											p.image
+												img(src="画像", alt="")
+										p!= テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_imageSet.styl
+
+
+	+l-columnBlock
+		+l-columnBox
+			+l-contentsWidth
+				+l-spWrapper
+					p.p-markupTitle
+						span 画像+テキストコンポーネント01
+
+					+l-markupBlock
+
+						.c-imageText.is-imageRight
+							.imageBlock
+								.m-imageSet
+									figure.image
+										img(src="https://placehold.jp/400x248.png", alt="")
+										figcaption キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。
+
+							.textBlock
+								p!= DUMMY_TEXT_200
+								p!= DUMMY_TEXT_400
+
+						+p-markupBtn('pug').
+							.c-imageText.is-imageRight
+								.imageBlock
+									.m-imageSet 画像モジュール
+
+								.textBlock
+									p!= テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_imageText.styl
+
+

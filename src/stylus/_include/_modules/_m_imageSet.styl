@@ -1,8 +1,11 @@
-.m-module-image
-	text-align center
-	figure
+.m-imageSet
+	marginBottom(20)
+	.image
 		display table
-		margin 0 auto
+		+MQ(SP_RES_WID)
+			width 100%
+			text-align center
+
 		figcaption
 			display table-caption
 			caption-side bottom
@@ -15,6 +18,3 @@
 	img
 		max-width 100%
 		height auto
-
-		+MQ(SP_RES_WID)
-			width 100%

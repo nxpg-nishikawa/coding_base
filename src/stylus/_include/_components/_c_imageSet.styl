@@ -1,0 +1,54 @@
+.c-imageSet
+	marginBottom(60)
+
+	.box
+		flexBox()
+		justify-content space-between
+		margin-top 10px
+		
+		&:first-child
+			margin-top 0
+
+		p, li
+			margin 10px 0 0
+
+		&.is-one
+			li
+				&:first-child
+					margin-top 0
+
+		&.is-two
+			li
+				width calc(50% - 10px)
+				+MQ(SP_RES_WID)
+					width 100%
+				&:nth-of-type(-n + 2)
+					margin-top 0
+
+		&.is-three
+			&:after
+				content ""
+				display block
+				width calc(33.3% - 10px)
+
+			li
+				width calc(33.3% - 10px)
+				+MQ(SP_RES_WID)
+					width 100%
+				&:nth-of-type(-n + 3)
+					margin-top 0
+					
+		&.is-four
+			&:before, &:after
+				order 1
+				content ""
+				display block
+				width calc(25% - 10px)
+			li
+				width calc(25% - 10px)
+
+				+MQ(SP_RES_WID)
+					width calc(50% - 10px)
+
+				&:nth-of-type(-n + 4)
+						margin-top 0
