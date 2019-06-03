@@ -1,0 +1,24 @@
+.l-splitSet
+
+	.box
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+
+		&.is-two
+			.item
+				width calc(50% - 5px)
+
+		&.is-three
+			.item
+				width calc(33.3% - 5px)
+
+		&.is-four
+			.item
+				width calc(25% - 5px)
+
+	.item
+		+MQ(SP_RES_WID)
+			width 100% !important
+			&:nth-of-type(n + 2)
+				margin-top 10px

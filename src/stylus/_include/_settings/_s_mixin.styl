@@ -7,6 +7,15 @@ MQ(maxWidth){
 	}
 }
 
+HOVER(minWidth){
+	@media screen and (min-width: minWidth) {
+		&:hover {
+			{block}
+		}
+	}
+	
+}
+
 wSet(width, parent)
 	return width / parent * 100%;
 
@@ -40,7 +49,7 @@ init()
 
 	input, select, textarea, button
 		fontSet();
-			
+	
 	+MQ(SP_RES_WID)
 		min-width: SP_CT_WID;
 		width: 100%;
@@ -86,3 +95,4 @@ marginBottom(MARGIN)
 
 	+MQ(SP_RES_WID)
 		margin-bottom (MARGIN / 2) * 1px
+

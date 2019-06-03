@@ -1,0 +1,46 @@
+.c-newsSet01
+	marginBottom(60)
+	dl
+		flexBox()
+		
+	dt, dd
+		margin-top 15px
+		padding-top 15px
+		border-top 1px solid #ccc
+		+MQ(SP_RES_WID)
+			margin-top 10px
+		&:nth-of-type(1)
+			margin-top 0
+			padding-top 0
+			border-top none
+
+	a
+		@extend .iconSet
+
+	.titleBlock
+		width 170px
+		flexBox()
+		aline-items center
+
+		+MQ(SP_RES_WID)
+			width 100%
+
+	.textBlock
+		width calc(100% - 170px)
+
+		+MQ(SP_RES_WID)
+			width 100%
+
+	.date
+		padding-top 3px
+		fontSize(13)
+		font-weight bold
+
+	.tag
+		display table
+		width 50px
+		margin-top 3px
+		margin-left 8px
+		border 1px solid #ccc
+		fontSize(11)
+		text-align center

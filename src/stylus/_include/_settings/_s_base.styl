@@ -12,7 +12,9 @@ a
 	&:link, &:visited
 		color: DF_URL_TEXT_COLOR;
 		text-decoration: underline;
-	&:hover, &:active
+	&:active
+		text-decoration: none
+	+HOVER(SP_RES_WID)
 		text-decoration: none
 	&:focus
 		outline none

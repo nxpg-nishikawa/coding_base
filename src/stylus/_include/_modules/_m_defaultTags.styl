@@ -2,45 +2,48 @@
 	background-color POINT_COLOR01
 	color #ffffff
 
-div, p, li, figure
-	// margin-bottom 10px
-	&.is-right
-		text-align: right;
-	&.is-center
-		text-align: center;
-	&:last-child
-		margin-bottom 0
+.defaultSet
+	div, p, li, figure
+		// margin-bottom 10px
+		&.is-right
+			text-align: right;
+		&.is-center
+			text-align: center;
+		&:last-child
+			margin-bottom 0
 
-	strong, b
-		font-weight: bold;
-	strong
-		color: DF_URL_TEXT_COLOR;
-	i
-		font-style: italic;
-	sup
-		fontSize(10);
-		vertical-align: super;
-	sub
-		fontSize(10);
-		vertical-align: sub;
+		strong, b
+			font-weight: bold;
+		strong
+			color: DF_URL_TEXT_COLOR;
+		i
+			font-style: italic;
+		sup
+			fontSize(10);
+			vertical-align: super;
+		sub
+			fontSize(10);
+			vertical-align: sub;
+		a
+			@extend .iconSet
 
-ul, ol
-	&.is-decimal, &.is-disc
-		margin-bottom 10px
-		ul, ol
-			margin-top 5px
-			margin-left: 1.4em;
+	ul, ol
+		&.is-decimal, &.is-disc
+			margin-bottom 10px
+			ul, ol
+				margin-top 5px
+				margin-left: 1.4em;
+				li
+					&:last-child
+						margin-bottom 0
+					
+		&.is-disc
+			padding-left: 1.3em;
+
 			li
-				&:last-child
-					margin-bottom 0
+				list-style: disc;
 				
-	&.is-disc
-		padding-left: 1.3em;
-
-		li
-			list-style: disc;
-			
-	&.is-decimal
-		padding-left: 1.5em;
-		li
-			list-style: decimal;
+		&.is-decimal
+			padding-left: 1.5em;
+			li
+				list-style: decimal;

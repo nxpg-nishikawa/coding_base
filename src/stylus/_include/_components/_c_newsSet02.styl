@@ -1,0 +1,70 @@
+.c-newsSet02
+	marginBottom(60)
+	li
+		flexBox()
+		
+		&:nth-of-type(odd)
+			a
+				background-color #f2f2f2
+
+	.titleBlock
+		width 170px
+		flexBox()
+		aline-items center
+		padding-top 3px
+		+MQ(SP_RES_WID)
+			width 100%
+
+	.textBlock
+		width calc(100% - 170px)
+		+MQ(SP_RES_WID)
+			width 100%
+	
+	a
+		flexBox()
+		position relative
+		width 100%
+		padding 15px 40px 15px 15px
+		color inherit
+		text-decoration none
+		
+		iconSet('.text')
+
+		+HOVER(SP_RES_WID)
+			.text
+				text-decoration: none
+
+	.date
+		color inherit
+		text-decoration none
+		fontSize(13)
+		font-weight bold
+
+	.tag
+		display table
+		width 50px
+		margin-left 8px
+		border 1px solid #ccc
+		fontSize(11)
+		text-align center
+
+	.text
+		color: DF_URL_TEXT_COLOR;
+		text-decoration: underline;
+		
+
+		&:after
+			content ""
+			display block
+			position absolute
+			top 50%
+			right 10px
+
+			width 11px
+			height 8px
+
+			background-image url('../images/common/common_icon_arrow01.png')
+			background-repeat no-repeat
+			background-size cover
+
+			transform translate3d(0, -50%, 0)
