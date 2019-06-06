@@ -1,0 +1,956 @@
+extends _include/_template/_t_base_template
+
+block vars
+	- var KEY = "component"
+	- var PAGE = PAGES[KEY]
+	- var RELATIVE_PATH = PAGE.PATH
+	- var header = "false"
+	- var footer = "false"
+	- var side = ["false","left"]
+	- var jquery = "true"
+
+
+block contents
+
+	+l-columnBlock
+		h3.m-title-bg01
+			span レイアウト
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 基本レイアウト
+					+l-markupBlock
+						+p-markupBtn('pug').
+							+l-columnBlock 大レイアウト
+								+l-columnBox 小レイアウト
+									+l-contentsWidth コンテンツ幅
+										+l-mqWrapper sp左右padding用
+											コンテンツ
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_layout/_l_layoutSet.styl
+
+
+		+l-columnBox
+			+l-bgBlock
+				+l-contentsWidth
+					+l-mqWrapper
+						h2.m-markupTitle
+							span 背景レイアウト01
+		
+						+l-markupBlock
+							+p-markupBtn('pug').
+								+l-bgBlock
+									+l-contentsWidth
+										コンテンツ
+
+							+p-markupBtn('stylus')
+								include ../stylus/_include/_layout/_l_bgBlock.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 分割レイアウト
+
+					+l-markupBlock
+						+l-splitSet
+							.box.is-two
+								.item
+									.defaultSet
+										p!= DUMMY_TEXT_400
+								.item
+									.defaultSet
+										p!= DUMMY_TEXT_200
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							+l-splitSet
+								.box (.is-two / .is-three / .is-four)
+									.item
+										コンテンツ
+						
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_layout/_l_splitSet.styl
+
+
+
+
+	+l-columnBlock
+		h3.m-title-bg01
+			span コンポーネント
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 画像+テキストコンポーネント01
+
+					+l-markupBlock
+
+						.c-imageText.is-imageRight
+							.imageBlock
+								.m-imageSet
+									figure.image
+										img(src="https://placehold.jp/400x248.png", alt="")
+										figcaption キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。キャプションが入ります。
+
+							.textBlock
+								.defaultSet
+									p!= DUMMY_TEXT_200
+									p!= DUMMY_TEXT_400
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-imageText (.is-imageRight / .is-imageLeft)
+								.imageBlock
+									.m-imageSet
+
+								.textBlock
+									.defaultSet
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_imageText.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 画像コンポーネント01
+					
+					+l-markupBlock
+						.c-imageSet
+							ul.box.is-three
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-imageComponent
+								ul.box (.is-two / .is-three / .is-four)
+									li.item
+										.m-imageSet
+											p.image
+												img(src="画像", alt="")
+											.defaultSet
+												p!= テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_imageSet.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ボタンコンポーネント01
+					
+					+l-markupBlock
+						.c-btnSet
+							ul.box.is-three
+								li.item
+									.m-btnSet01
+										a(href="")
+											span ボタン
+								li.item
+									.m-btnSet01
+										a(href=".pdf")
+											span ボタン
+								li.item
+									.m-btnSet01
+										a(href=".doc")
+											span ボタン
+								li.item
+									.m-btnSet01
+										a(href="")
+											span ボタン
+								li.item
+									.m-btnSet01
+										a(href="" target="_blank")
+											span ボタン
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-imageSet
+								ul.box (.is-two / .is-three / .is-four)
+									li.item.m-btnSet01
+										a(href="")
+											span ボタン
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_imageSet.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ニュースコンポーネント01
+
+
+					+l-markupBlock
+						.c-newsSet01
+							dl
+								dt.titleBlock
+									p.date 2019/12/01
+									p.tag タグ
+								dd.textBlock
+									p.text
+										a(href=".pdf")
+											span テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+								dt.titleBlock
+									p.date 2019/12/01
+									p.tag タグ
+								dd.textBlock
+									p.text
+										a(href=".doc")
+											span テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+								dt.titleBlock
+									p.date 2019/12/01
+									p.tag タグ
+								dd.textBlock
+									p.text
+										a(href="")
+											span テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-newsSet01
+								dl
+									dt.titleBlock
+										p.date 2019/12/01
+										p.tag タグ
+									dd.textBlock
+										p.text
+											a(href="")
+												span テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_newsSet01.styl
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ニュースコンポーネント02
+
+
+					+l-markupBlock
+						.c-newsSet02
+							ul
+								li
+									a(href="")
+										.titleBlock
+											p.date 2019/12/01
+											p.tag タグ
+										.textBlock
+											p.text
+												span テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+								li
+									a(href=".pdf")
+										.titleBlock
+											p.date 2019/12/01
+											p.tag タグ
+										.textBlock
+											p.text
+												span テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+								li
+									a(href=".doc")
+										.titleBlock
+											p.date 2019/12/01
+											p.tag タグ
+										.textBlock
+											p.text
+												span テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-newsSet02
+								ul
+									li
+										a(href="")
+											.titleBlock
+												p.date 2019/12/01
+												p.tag タグ
+											.textBlock
+												p.text
+													span テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_newsSet02.styl
+	
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ぱんくずセット
+
+					+l-markupBlock
+						.c-breadcrumbSet
+							ol
+								li
+									a(href="")
+										span ホーム
+								li
+									a(href="")
+										span 下層ページ
+								li
+									span 下層ページ
+					
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-breadcrumbSet
+								ol
+									li
+										a(href="")
+											span ホーム
+									li
+										span 下層ページ
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_breadcrumbSet.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span フォームセット
+
+					+l-markupBlock
+						.c-formSet
+							table
+								tbody
+									tr
+										th
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
+										td
+											.inner
+												.m-inputText
+													input(type="text")
+									tr
+										th
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
+										td
+											.inner
+												.m-inputSelect
+													select
+														option 選択してください
+									tr
+										th
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
+										td
+											.inner
+												.m-inputRadio
+													label(for="form-radio01")
+														input(type="radio" name="form-radio" id="form-radio01" checked="checked")
+														span ラベル
+													label(for="form-radio02")
+														input(type="radio" name="form-radio" id="form-radio02")
+														span ラベル
+									tr
+										th
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
+										td
+											.inner
+												.m-inputCheck
+													label(for="form-check01")
+														input(type="checkbox" name="form-checkbox" id="form-check01")
+														span ラベル
+													label(for="form-check02")
+														input(type="checkbox" name="form-checkbox" id="form-check02")
+														span ラベル
+									tr
+										th
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
+										td
+											.inner
+												.m-inputTextarea
+													textarea
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-formSet
+								table
+									tbody
+										tr
+											th
+												.inner
+													p.title
+														span カテゴリ
+													p.tag
+														span 必須
+											td
+												.inner
+													フォームモジュール
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_formSet.styl
+
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span テーブルセット
+					+l-markupBlock
+						.c-tableSet
+							table
+								thead
+									tr
+										th テキスト
+										th テキスト
+										th テキスト
+								tbody
+									tr
+										th テキスト
+										td テキスト
+										td テキスト
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-tableSet
+								table
+									thead
+										tr
+											th テキスト
+									tbody
+										tr
+											th テキスト
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_tableSet.styl
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ページャーセット
+					+l-markupBlock
+						.c-pagerSet
+							ul
+								li
+									.box
+										span 1
+								li
+									a(href="")
+										.box
+											span 2
+								li
+									a(href="")
+										.box
+											span 3
+								li
+									a(href="")
+										.box
+											span 4
+								li
+									a(href="")
+										.box
+											span 5
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-pagerSet
+								ul
+									li
+										.box
+											span 1
+									li
+										a(href="")
+											.box
+												span 2
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_pagerSet.styl
+
+
+	+l-columnBlock
+		h3.m-title-bg01
+			span モジュール
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span デフォルトタグ
+
+					+l-markupBlock
+						.defaultSet
+							p!= DUMMY_TEXT_400
+
+							ul.is-disc
+								li!= DUMMY_TEXT_50
+									ul
+										li!= DUMMY_TEXT_20
+											ul
+												li!= DUMMY_TEXT_20
+							
+							ol.is-decimal
+								li!= DUMMY_TEXT_50
+									ol
+										li!= DUMMY_TEXT_50
+											ol
+												li!= DUMMY_TEXT_50
+					
+					+l-markupBlock
+						+p-markupBtn('pug').
+							p!= テキスト
+
+							ul.is-disc
+								li!= テキスト
+							
+							ol.is-decimal
+								li!= テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_m_defaultTags.styl
+		
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span アイコンセット
+
+					+l-markupBlock
+						.defaultSet
+							ul.is-disc
+								li
+									a(href="sample.pdf")
+										span pdfアイコン
+								li
+									a(href="sample.doc")
+										span その他アイコン
+								li
+									a(href="" target="_blank")
+										span 外部リンクアイコン
+								
+					
+					+l-markupBlock
+						+p-markupBtn('pug').
+							a(href="sample.pdf")
+								span pdfアイコン
+							a(href="sample.doc")
+								span その他アイコン
+							a(href="" target="_blank")
+								span 外部リンクアイコン
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_settings/_s_iconSet.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ボーダートップボトムタイトル01
+					+l-markupBlock
+						h3.m-title-borderTopBottom01
+							span タイトル
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							h3.m-title-borderTopBottom01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderTopBottom01.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ボーダートップタイトル01
+					
+					+l-markupBlock
+						h3.m-title-borderTop01
+							span タイトル
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							h3.m-title-borderTop01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderTop01.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ボーダーボトムタイトル01
+
+					+l-markupBlock
+						h3.m-title-borderBottom01
+							span タイトル
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							h3.m-title-borderBottom01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderBottom01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ボーダーライトタイトル01
+					
+					+l-markupBlock
+						h3.m-title-borderRight01
+							span タイトル
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							h3.m-title-borderRight01
+								span タイトル
+						
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderRight01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ボーダーレフトタイトル01
+					
+					+l-markupBlock
+						h3.m-title-borderLeft01
+							span タイトル
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							h3.m-title-borderLeft01
+								span タイトル
+						
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_borderLeft01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 強調タイトル01
+					
+					+l-markupBlock
+						h3.m-title-boldLarge01
+							span タイトル
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							h3.m-title-boldLarge01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_boldLarge01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 背景タイトル01
+					
+					+l-markupBlock
+						h3.m-title-bg01
+							span タイトル
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							h3.m-title-bg01
+								span タイトル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_bg01.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 複数文字タイトル01
+
+					+l-markupBlock
+						h3.m-title-twoWord01
+							span.is-large ラージタイトル
+							span.is-small スモールタイトル
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							h3.m-title-twoWord01
+								span.is-large ラージタイトル
+								span.is-small スモールタイトル
+						
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_title/_m_title_twoWord01.styl
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span テキストボックス01
+					
+					+l-markupBlock
+						.m-inputText
+							input(type="text")
+					
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.m-inputText
+								input(type="text")
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_form/_m_inputText.styl
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span セレクトボックス01
+					+l-markupBlock
+						.m-inputSelect
+							select
+								option 選択してください
+					
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.m-inputSelect
+								select
+									option 選択してください
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_form/_m_inputSelect.styl
+		
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span テキストエリア01
+					+l-markupBlock
+						.m-inputTextarea
+							textarea
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.m-inputTextarea
+								textarea
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_form/_m_inputTextarea.styl
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ラジオボタン01
+					+l-markupBlock
+						.m-inputRadio
+							label(for="radio01")
+								input(type="radio" name="radio" id="radio01" checked="checked")
+								span ラベル
+							label(for="radio02")
+								input(type="radio" name="radio" id="radio02")
+								span ラベル
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.m-inputRadio
+								label(for="radio01")
+									input(type="radio" name="radio" id="radio01" checked="checked")
+									span ラベル
+								label(for="radio02")
+									input(type="radio" name="radio" id="radio02")
+									span ラベル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_form/_m_inputRadio.styl
+		
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span チェックボタン01
+					+l-markupBlock
+						.m-inputCheck
+							label(for="check01")
+								input(type="checkbox" name="checkbox" id="check01")
+								span ラベル
+							label(for="check02")
+								input(type="checkbox" name="checkbox" id="check02")
+								span ラベル
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.m-inputCheck
+								label(for="check01")
+									input(type="checkbox" name="checkbox" id="check01")
+									span ラベル
+								label(for="check02")
+									input(type="checkbox" name="checkbox" id="check02")
+									span ラベル
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_form/_m_inputCheck.styl
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ボタンモジュール01
+					
+					+l-markupBlock
+						p.m-btnSet01
+							a(href=".pdf")
+								span ボタン
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							p.m-btnSet01
+								a(href="") 拡張子でアイコン切り分け
+									span ボタン
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_m_btnSet.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 画像モジュール01
+					
+					+l-markupBlock
+						.m-imageSet
+							figure.image
+								img(src="https://placehold.jp/150x150.png", alt="")
+								figcaption テキストが入ります
+						.m-imageSet
+							p.image
+								img(src="https://placehold.jp/150x150.png", alt="")
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.m-imageSet
+								figure.image p.image
+									img(src="画像", alt="")
+									figcaption テキスト
+							
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_m_imageSet.styl
+
+
+
+	+l-columnBlock
+		h3.m-title-bg01
+			span js
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 高さを揃える(matchHeight)
+				
+					+l-markupBlock
+						+l-splitSet
+							.box.is-two
+								.item
+									.defaultSet
+										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入りますタイトルが入ります
+										.m-imageSet
+											p.image
+												img(src="https://placehold.jp/150x150.png", alt="")
+								.item
+									.defaultSet
+										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入ります
+										.m-imageSet
+											p.image
+												img(src="https://placehold.jp/150x150.png", alt="")
+								.item
+									.defaultSet
+										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入ります
+										.m-imageSet
+											p.image
+												img(src="https://placehold.jp/150x150.png", alt="")
+								.item
+									.defaultSet
+										p.js-matchHeight タイトルが入りますタイトルが入ります
+										.m-imageSet
+											p.image
+												img(src="https://placehold.jp/150x150.png", alt="")
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							p.js-matchHeight テキスト
+							
+						+p-markupBtn('js').
+							const matchHeight = require('../_modules/matchHeight.js');
+
+							//読み込み後とリサイズ処理に入れる
+							matchHeight('.js-matchHeight');
