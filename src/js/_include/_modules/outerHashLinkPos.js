@@ -12,5 +12,4 @@ module.exports = (target) => {
 			window.scrollTo(0, myTop);
 		}, 300);
 	}
-
 }

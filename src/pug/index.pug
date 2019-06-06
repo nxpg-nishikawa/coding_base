@@ -21,6 +21,11 @@ block contents
 				
 				str = replaceAll(str, '                        ', '');
 				$(this).find('.pug+.source code').text(str);
+
+				var str = $(this).find('.js+.source code').text();
+				
+				str = replaceAll(str, '                        ', '');
+				$(this).find('.js+.source code').text(str);
 			});
 			function replaceAll(str, beforeStr, afterStr){
 				var reg = new RegExp(beforeStr, "g");
@@ -437,6 +442,24 @@ block contents
 											.inner
 												.m-inputTextarea
 													textarea
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-formSet
+								table
+									tbody
+										tr
+											th
+												.inner
+													p.title
+														span カテゴリ
+													p.tag
+														span 必須
+											td
+												.inner
+													フォームモジュール
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_formSet.styl
 
 
 
@@ -459,8 +482,18 @@ block contents
 										th テキスト
 										td テキスト
 										td テキスト
-
-
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-tableSet
+								table
+									thead
+										tr
+											th テキスト
+									tbody
+										tr
+											th テキスト
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_tableSet.styl
 
 		+l-columnBox
 			+l-contentsWidth
@@ -471,21 +504,38 @@ block contents
 						.c-pagerSet
 							ul
 								li
-									a(href="")
+									.box
 										span 1
 								li
 									a(href="")
-										span 2
+										.box
+											span 2
 								li
 									a(href="")
-										span 3
+										.box
+											span 3
 								li
 									a(href="")
-										span 4
+										.box
+											span 4
 								li
 									a(href="")
-										span 5
+										.box
+											span 5
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-pagerSet
+								ul
+									li
+										.box
+											span 1
+									li
+										a(href="")
+											.box
+												span 2
 
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_pagerSet.styl
 
 
 	+l-columnBlock
@@ -879,9 +929,50 @@ block contents
 
 
 
+	+l-columnBlock
+		h3.m-title-bg01
+			span js
 
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 高さを揃える(matchHeight)
+				
+					+l-markupBlock
+						+l-splitSet
+							.box.is-two
+								.item
+									.defaultSet
+										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入りますタイトルが入ります
+										.m-imageSet
+											p.image
+												img(src="https://placehold.jp/150x150.png", alt="")
+								.item
+									.defaultSet
+										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入ります
+										.m-imageSet
+											p.image
+												img(src="https://placehold.jp/150x150.png", alt="")
+								.item
+									.defaultSet
+										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入ります
+										.m-imageSet
+											p.image
+												img(src="https://placehold.jp/150x150.png", alt="")
+								.item
+									.defaultSet
+										p.js-matchHeight タイトルが入りますタイトルが入ります
+										.m-imageSet
+											p.image
+												img(src="https://placehold.jp/150x150.png", alt="")
 
+					+l-markupBlock
+						+p-markupBtn('pug').
+							p.js-matchHeight テキスト
+							
+						+p-markupBtn('js').
+							const matchHeight = require('../_modules/matchHeight.js');
 
-
-
-
+							//読み込み後とリサイズ処理に入れる
+							matchHeight('.js-matchHeight');
