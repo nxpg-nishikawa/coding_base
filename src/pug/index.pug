@@ -7,6 +7,7 @@ block vars
 	- var header = "false"
 	- var footer = "false"
 	- var side = ["false","left"]
+	- var jquery = "false"
 
 
 block contents
@@ -34,7 +35,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span 基本レイアウト
 					+l-markupBlock
@@ -42,7 +43,7 @@ block contents
 							+l-columnBlock 大レイアウト
 								+l-columnBox 小レイアウト
 									+l-contentsWidth コンテンツ幅
-										+l-spWrapper sp左右padding用
+										+l-mqWrapper sp左右padding用
 											コンテンツ
 
 						+p-markupBtn('stylus')
@@ -52,7 +53,7 @@ block contents
 		+l-columnBox
 			+l-bgBlock
 				+l-contentsWidth
-					+l-spWrapper
+					+l-mqWrapper
 						h2.m-markupTitle
 							span 背景レイアウト01
 		
@@ -68,7 +69,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span 分割レイアウト
 
@@ -77,10 +78,39 @@ block contents
 							.box.is-two
 								.item
 									.defaultSet
+										p.js-matchHeight.a01 ああああああああああああ
 										p!= DUMMY_TEXT_400
 								.item
 									.defaultSet
+										p.js-matchHeight.a02 ああああああああああああ
+											br
+											| ああああああああああああ
+											br
+											| ああああああああああああ
 										p!= DUMMY_TEXT_200
+								.item
+									.defaultSet
+										p.js-matchHeight.a03 ああああああああああああ
+											br
+											| ああああああああああああ
+											br
+											| ああああああああああああ
+											br
+											| ああああああああああああ
+											br
+											| ああああああああああああ
+										p!= DUMMY_TEXT_400
+								.item
+									.defaultSet
+										p.js-matchHeight.a04 ああああああああああああ
+											br
+											| ああああああああああああ
+											br
+											| ああああああああああああ
+											br
+											| ああああああああああああ
+										p!= DUMMY_TEXT_200
+							
 
 					+l-markupBlock
 						+p-markupBtn('pug').
@@ -101,7 +131,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span 画像+テキストコンポーネント01
 
@@ -134,7 +164,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span 画像コンポーネント01
 					
@@ -183,7 +213,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ボタンコンポーネント01
 					
@@ -221,7 +251,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ニュースコンポーネント01
 
@@ -267,7 +297,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ニュースコンポーネント02
 
@@ -319,7 +349,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ぱんくずセット
 
@@ -351,7 +381,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span フォームセット
 
@@ -411,7 +441,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span テーブルセット
 					+l-markupBlock
@@ -430,7 +460,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ページャーセット
 					+l-markupBlock
@@ -465,7 +495,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span デフォルトタグ
 
@@ -499,11 +529,40 @@ block contents
 
 						+p-markupBtn('stylus')
 							include ../stylus/_include/_modules/_m_defaultTags.styl
+		
 
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
+					h2.m-markupTitle
+						span アイコンセット
+
+					+l-markupBlock
+						.defaultSet
+							ul.is-disc
+								li
+									a(href="sample.pdf")
+										span pdfアイコン
+								li
+									a(href="sample.doc")
+										span その他アイコン
+								li
+									a(href="" target="_blank")
+										span 外部リンクアイコン
+								
+					
+					+l-markupBlock
+						+p-markupBtn('pug').
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_m_defaultTags.styl
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ボーダートップボトムタイトル01
 					+l-markupBlock
@@ -521,7 +580,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ボーダートップタイトル01
 					
@@ -540,7 +599,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ボーダーボトムタイトル01
 
@@ -560,7 +619,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ボーダーライトタイトル01
 					
@@ -580,7 +639,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ボーダーレフトタイトル01
 					
@@ -600,7 +659,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span 強調タイトル01
 					
@@ -620,7 +679,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span 背景タイトル01
 					
@@ -640,7 +699,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span 複数文字タイトル01
 
@@ -661,7 +720,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span テキストボックス01
 					
@@ -679,7 +738,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span セレクトボックス01
 					+l-markupBlock
@@ -698,7 +757,7 @@ block contents
 		
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span テキストエリア01
 					+l-markupBlock
@@ -714,7 +773,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ラジオボタン01
 					+l-markupBlock
@@ -740,7 +799,7 @@ block contents
 		
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span チェックボタン01
 					+l-markupBlock
@@ -766,7 +825,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span ボタンモジュール01
 					
@@ -788,7 +847,7 @@ block contents
 
 		+l-columnBox
 			+l-contentsWidth
-				+l-spWrapper
+				+l-mqWrapper
 					h2.m-markupTitle
 						span 画像モジュール01
 					
