@@ -78,39 +78,10 @@ block contents
 							.box.is-two
 								.item
 									.defaultSet
-										p.js-matchHeight.a01 ああああああああああああ
 										p!= DUMMY_TEXT_400
 								.item
 									.defaultSet
-										p.js-matchHeight.a02 ああああああああああああ
-											br
-											| ああああああああああああ
-											br
-											| ああああああああああああ
 										p!= DUMMY_TEXT_200
-								.item
-									.defaultSet
-										p.js-matchHeight.a03 ああああああああああああ
-											br
-											| ああああああああああああ
-											br
-											| ああああああああああああ
-											br
-											| ああああああああああああ
-											br
-											| ああああああああああああ
-										p!= DUMMY_TEXT_400
-								.item
-									.defaultSet
-										p.js-matchHeight.a04 ああああああああああああ
-											br
-											| ああああああああああああ
-											br
-											| ああああああああああああ
-											br
-											| ああああああああああああ
-										p!= DUMMY_TEXT_200
-							
 
 					+l-markupBlock
 						+p-markupBtn('pug').
@@ -171,41 +142,47 @@ block contents
 					+l-markupBlock
 						.c-imageSet
 							ul.box.is-three
-								li.item.m-imageSet
-									p.image
-										img(src="https://placehold.jp/375x232.png", alt="")
-									.defaultSet
-										p!= DUMMY_TEXT_50
-								li.item.m-imageSet
-									p.image
-										img(src="https://placehold.jp/375x232.png", alt="")
-									.defaultSet
-										p!= DUMMY_TEXT_50
-								li.item.m-imageSet
-									p.image
-										img(src="https://placehold.jp/375x232.png", alt="")
-									.defaultSet
-										p!= DUMMY_TEXT_50
-								li.item.m-imageSet
-									p.image
-										img(src="https://placehold.jp/375x232.png", alt="")
-									.defaultSet
-										p!= DUMMY_TEXT_50
-								li.item.m-imageSet
-									p.image
-										img(src="https://placehold.jp/375x232.png", alt="")
-									.defaultSet
-										p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.item
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
 
 					+l-markupBlock
 						+p-markupBtn('pug').
 							.c-imageComponent
 								ul.box (.is-two / .is-three / .is-four)
-									li.item.m-imageSet
-										p.image
-											img(src="画像", alt="")
-										.defaultSet
-											p!= テキスト
+									li.item
+										.m-imageSet
+											p.image
+												img(src="画像", alt="")
+											.defaultSet
+												p!= テキスト
 
 						+p-markupBtn('stylus')
 							include ../stylus/_include/_components/_c_imageSet.styl
@@ -220,21 +197,26 @@ block contents
 					+l-markupBlock
 						.c-btnSet
 							ul.box.is-three
-								li.item.m-btnSet01
-									a(href="")
-										span ボタン
-								li.item.m-btnSet01
-									a(href=".pdf")
-										span ボタン
-								li.item.m-btnSet01
-									a(href=".doc")
-										span ボタン
-								li.item.m-btnSet01
-									a(href="")
-										span ボタン
-								li.item.m-btnSet01
-									a(href="" target="_blank")
-										span ボタン
+								li.item
+									.m-btnSet01
+										a(href="")
+											span ボタン
+								li.item
+									.m-btnSet01
+										a(href=".pdf")
+											span ボタン
+								li.item
+									.m-btnSet01
+										a(href=".doc")
+											span ボタン
+								li.item
+									.m-btnSet01
+										a(href="")
+											span ボタン
+								li.item
+									.m-btnSet01
+										a(href="" target="_blank")
+											span ボタン
 
 					+l-markupBlock
 						+p-markupBtn('pug').
@@ -391,50 +373,70 @@ block contents
 								tbody
 									tr
 										th
-											p.title カテゴリ
-											p.tag 必須
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
 										td
-											.m-inputText
-												input(type="text")
+											.inner
+												.m-inputText
+													input(type="text")
 									tr
 										th
-											p.title カテゴリ
-											p.tag 必須
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
 										td
-											.m-inputSelect
-												select
-													option 選択してください
+											.inner
+												.m-inputSelect
+													select
+														option 選択してください
 									tr
 										th
-											p.title カテゴリ
-											p.tag 必須
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
 										td
-											.m-inputRadio
-												label(for="form-radio01")
-													input(type="radio" name="form-radio" id="form-radio01" checked="checked")
-													span ラベル
-												label(for="radio02")
-													input(type="radio" name="form-radio" id="form-radio02")
-													span ラベル
+											.inner
+												.m-inputRadio
+													label(for="form-radio01")
+														input(type="radio" name="form-radio" id="form-radio01" checked="checked")
+														span ラベル
+													label(for="form-radio02")
+														input(type="radio" name="form-radio" id="form-radio02")
+														span ラベル
 									tr
 										th
-											p.title カテゴリ
-											p.tag 必須
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
 										td
-											.m-inputCheck
-												label(for="form-check01")
-													input(type="checkbox" name="form-checkbox" id="form-check01")
-													span ラベル
-												label(for="check02")
-													input(type="checkbox" name="form-checkbox" id="form-check02")
-													span ラベル
+											.inner
+												.m-inputCheck
+													label(for="form-check01")
+														input(type="checkbox" name="form-checkbox" id="form-check01")
+														span ラベル
+													label(for="form-check02")
+														input(type="checkbox" name="form-checkbox" id="form-check02")
+														span ラベル
 									tr
 										th
-											p.title カテゴリ
-											p.tag 必須
+											.inner
+												p.title
+													span カテゴリ
+												p.tag
+													span 必須
 										td
-											.m-inputTextarea
-												textarea
+											.inner
+												.m-inputTextarea
+													textarea
 
 
 
@@ -451,9 +453,11 @@ block contents
 									tr
 										th テキスト
 										th テキスト
+										th テキスト
 								tbody
 									tr
 										th テキスト
+										td テキスト
 										td テキスト
 
 
@@ -481,9 +485,6 @@ block contents
 								li
 									a(href="")
 										span 5
-
-
-
 
 
 
@@ -554,9 +555,15 @@ block contents
 					
 					+l-markupBlock
 						+p-markupBtn('pug').
+							a(href="sample.pdf")
+								span pdfアイコン
+							a(href="sample.doc")
+								span その他アイコン
+							a(href="" target="_blank")
+								span 外部リンクアイコン
 
 						+p-markupBtn('stylus')
-							include ../stylus/_include/_modules/_m_defaultTags.styl
+							include ../stylus/_include/_settings/_s_iconSet.styl
 
 
 
