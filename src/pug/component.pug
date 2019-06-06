@@ -922,25 +922,15 @@ block contents
 							.box.is-two
 								.item
 									.defaultSet
-										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入りますタイトルが入ります
+										p.js-matchHeight タイトルが入ります
+											br
+											| タイトルが入りますタイトルが入りますタイトルが入ります
 										.m-imageSet
 											p.image
 												img(src="https://placehold.jp/150x150.png", alt="")
 								.item
 									.defaultSet
-										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入ります
-										.m-imageSet
-											p.image
-												img(src="https://placehold.jp/150x150.png", alt="")
-								.item
-									.defaultSet
-										p.js-matchHeight タイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入りますタイトルが入ります
-										.m-imageSet
-											p.image
-												img(src="https://placehold.jp/150x150.png", alt="")
-								.item
-									.defaultSet
-										p.js-matchHeight タイトルが入りますタイトルが入ります
+										p.js-matchHeight タイトルが入ります
 										.m-imageSet
 											p.image
 												img(src="https://placehold.jp/150x150.png", alt="")
@@ -952,5 +942,53 @@ block contents
 						+p-markupBtn('js').
 							const matchHeight = require('../_modules/matchHeight.js');
 
-							//読み込み後とリサイズ処理に入れる
+							//DOM読み込み後とリサイズ処理に入れる
 							matchHeight('.js-matchHeight');
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span smoothScroll
+				
+					+l-markupBlock
+						p
+							a(href="#l-contentsTop")
+								span ページトップへ戻る
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							p
+								a(href="#l-contentsTop")
+									span ページトップへ戻る
+							
+						+p-markupBtn('js').
+							const smoothScroll = require('../_modules/smoothScroll.js');
+
+							//DOM読み込み後に入れる
+							smoothScroll();
+
+		
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span sp用 電話番号リンク
+
+					+l-markupBlock
+						p
+							a(href="tel:0000000000").js-tellLink
+								span 000-000-0000
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							p
+								a(href="tel:0000000000").js-tellLink
+									span 000-000-0000
+
+						+p-markupBtn('js').
+							const spTellLink = require('../_modules/spTellLink.js');
+
+							//DOM読み込み後に入れる
+							spTellLink('.js-tellLink', op);
+

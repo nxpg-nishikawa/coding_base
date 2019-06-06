@@ -2,6 +2,8 @@ module.exports = (tg, op, flag) => {
 	let timeoutId = 1, pageFlag;
 	let currentWidth = window.innerWidth;
 
+
+
 	tg.DOMReadBefore(op);
 
 	document.addEventListener("DOMContentLoaded", () => {

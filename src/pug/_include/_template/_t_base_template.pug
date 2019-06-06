@@ -11,18 +11,18 @@ html(lang="ja" class= "is-" + KEY)
 		block library
 	body
 
-		main#l-layout-contentsTop
+		main#l-contentsTop
 			if(header == "true")
 				include ../_components/_c_common_header01
 
 			if(side[0] == "true")
-				.l-layout-sideWrapper(class= (side[1] == "left" ? "is-left" : "is-right" ) )
-					.l-layout-contentsBody
+				.l-sideWrapper(class= (side[1] == "left" ? "is-left" : "is-right" ) )
+					.l-contentsBody
 						block contents
-					aside.l-layout-sideContents
+					aside.l-sideContents
 						block side
 			else
-				.l-layout-contentsBody
+				.l-contentsBody
 					block contents
 
 			if(footer == "true")

@@ -29,5 +29,16 @@ module.exports = () => {
 		afterScroll: null,              // スクロールが終わった時
 		cancelScroll: null              // スクロールがキャンセルされた時
 	});
+	if(window.location.hash){
 
+		let hash = document.querySelector(window.location.hash + ''),
+			rect = hash.getBoundingClientRect(),
+			offsetTop = window.pageYOffset || document.documentElement.scrollTop,
+			myTop = rect.top + offsetTop - document.querySelector(op.TRIGGER).clientHeight;
+
+		console.log("aaa");
+		setTimeout(function () {
+			window.scrollTo(0, myTop);
+		}, 300);
+	}
 }
