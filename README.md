@@ -37,6 +37,33 @@
                 |-- ○ _p_home     // トップページ用css
         |-- stylus.styl        // style.css
 
+     ■ scss
+        |-- ● include           // (↓範囲大きい順)
+            |-- □ settings       // グローバル変数、reset、mixinなど 初期設定群（順番注意）
+                |-- _s_base.scss
+                |-- 
+                |-- 
+            |-- □ layout         // レイアウト（wrapperやcontents幅など）外側のパーツ
+                |-- ○ _l_layoutSet.scss
+                |-- 
+                |-- 
+            |-- □ components     // コンポーネント・共通パーツ（ヘッダー、フッター）などのパーツ
+                |-- ○ _c_common_header01.pug
+                |-- 
+                |-- 
+            |-- □ modules        // モジュール(ボタン、タイトルなど)内側のパーツ
+                |-- _m_btnSet.scss
+                |-- 
+                |-- 
+            |-- □ pages          // ページ固有のcss
+                |-- ○ _p_home     // トップページ用css
+                    |-- _p_homeMainvisual.scss
+                    |-- 
+                |-- ○ _p_home.scss
+                |-- 
+                |-- 
+        |-- stylus.styl        // style.css
+
     ■ js
         |-- ● include
             |-- □ _modules

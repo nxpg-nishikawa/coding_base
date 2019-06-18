@@ -10,7 +10,7 @@ module.exports = (className) => {
 
 		function arrayLengthSet(ar) {
 			let offTop = 0;
-			Array.prototype.slice.call(elm).forEach(function(event, i) {
+			[].slice.call(elm).forEach(function(event, i) {
 				if(offTop !== 0 && offTop !== event.offsetTop) {
 					arrayLength++;
 				}
@@ -24,7 +24,7 @@ module.exports = (className) => {
 
 		function arraySetFunc(ar) {
 			let offTop = 0;
-			Array.prototype.slice.call(elm).forEach(function(event, i) {
+			[].slice.call(elm).forEach(function(event, i) {
 				if(offTop !== 0 && offTop !== event.offsetTop) {
 					arrayCount++;
 				}

@@ -514,7 +514,93 @@ block contents
 
 						+p-markupBtn('stylus')
 							include ../stylus/_include/_components/_c_pagerSet.styl
+	
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span アコーディオン
+					+l-markupBlock
+						.js-accordion
+							p.js-accordion-parent.is-open タイトル01
+							p.js-accordion-child テキスト01
+							p.js-accordion-parent タイトル02
+							p.js-accordion-child テキスト02
+							p.js-accordion-parent タイトル03
+							p.js-accordion-child テキスト03
 
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.js-accordion
+								.js-accordion-parent クリック要素（.is-openで展開）
+								.js-accordion-child アコーディオン要素
+						
+						+p-markupBtn('js').
+							const accordionSet = require('../_modules/accordionSet.js');
+
+							//DOM読み込み後に入れる
+							accordionSet({
+								target: '.js-accordion', // 要素名
+								parentName: '.js-accordion-parent', // クリック要素名
+								childName: '.js-accordion-child', // アコーディオン要素名
+								speed: 300, // 速度
+								timing: 'ease', // タイミング
+								linkage: true, // アコーディオン連動
+								collapsible: true, // 折りたたみ有効
+								setBefore: function() {},
+								setAfter: function() {},
+								animationAfter: function() {},
+							});
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span QandAセット
+					+l-markupBlock
+						.c-qandaSet.js-accordion
+							ul
+								li
+									.titleBlock.js-accordion-parent.is-open
+										p.icon
+											span Q
+										.textArea
+											p.title タイトルが入ります
+									.textBlock.js-accordion-child
+										p.icon
+											span A
+										.textArea
+											p.text テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+								li
+									.titleBlock.js-accordion-parent
+										p.icon
+											span Q
+										.textArea
+											p.title タイトルが入ります
+									.textBlock.js-accordion-child
+										p.icon
+											span A
+										.textArea
+											p.text テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-qandaSet.js-accordion
+								ul
+									li
+										.titleBlock.js-accordion-parent.is-open
+											p.icon
+												span Q
+											.textArea
+												p.title タイトル
+										.textBlock.js-accordion-child
+											p.icon
+												span A
+											.textArea
+												p.text テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_qandaSet.styl
+		
 
 	+l-columnBlock
 		h3.m-title-bg01
@@ -992,3 +1078,4 @@ block contents
 							//DOM読み込み後に入れる
 							spTellLink('.js-tellLink', op);
 
+		
