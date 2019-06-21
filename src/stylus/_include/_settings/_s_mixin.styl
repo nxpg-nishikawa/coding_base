@@ -7,6 +7,12 @@ MQ(maxWidth){
 	}
 }
 
+MQ_SET(prop, width){
+	@media screen and (prop: maxWidth) {
+		{block}
+	}
+}
+
 HOVER(minWidth){
 	@media screen and (min-width: minWidth) {
 		&:hover {

@@ -12,9 +12,6 @@ function markupBlock() {
 		let _t = this;
 
 		_t.$target = $(".l-markupBlock");
-		_t.$target.on('click','.p-markupBtn',function(){
-			$(this).next().slideToggle();
-		})
 		replaceWord(_t.$target,'.pug+.source code', '                        ')
 		replaceWord(_t.$target,'.js+.source code', '                        ')
 	}

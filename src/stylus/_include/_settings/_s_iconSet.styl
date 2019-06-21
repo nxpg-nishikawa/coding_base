@@ -17,6 +17,13 @@
 				content ""
 			&:after
 				content none
+	
+	&[href*="#"]
+		&:before, &:after
+			transform translate3d(0, -50%, 0) rotate(90deg)
+		&[href*=".html"]
+			&:before, &:after
+				transform translate3d(0, -50%, 0) rotate(0)
 
 	&[target^='_blank']
 		&:before, &:after
@@ -85,6 +92,8 @@ iconSet(tag)
 				width 12px !important
 				height 14px !important
 				background-image url('../images/common/common_icon_etc01.png') !important
+
+	
 	{tag}
 		span
 			vertical-align middle

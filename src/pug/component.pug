@@ -87,6 +87,23 @@ block contents
 			+l-contentsWidth
 				+l-mqWrapper
 					h2.m-markupTitle
+						span ヘッダー01
+
+					+l-markupBlock
+		
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span フッター01
+
+					+l-markupBlock
+						
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
 						span 画像+テキストコンポーネント01
 
 					+l-markupBlock
@@ -175,6 +192,30 @@ block contents
 			+l-contentsWidth
 				+l-mqWrapper
 					h2.m-markupTitle
+						span 画像背景コンポーネント01
+					+l-markupBlock
+						.c-imageBgSet
+							p.bg
+								img(src="https://placehold.jp/1800x400.png", alt="")
+							.contentsArea.is-left
+								h3.m-title-boldLarge01
+									span タイトル
+								p.text テキストが入ります
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-imageBgSet
+								p.bg
+									img(src="https://placehold.jp/1800x400.png", alt="")
+								.contentsArea (.is-left / .is-center / .is-right)
+									p テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_imageBgSet.styl
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
 						span ボタンコンポーネント01
 					
 					+l-markupBlock
@@ -183,27 +224,31 @@ block contents
 								li.item
 									.m-btnSet01
 										a(href="")
-											span ボタン
+											span 通常ボタン
 								li.item
 									.m-btnSet01
 										a(href=".pdf")
-											span ボタン
+											span pdfファイル
 								li.item
 									.m-btnSet01
 										a(href=".doc")
-											span ボタン
+											span その他ファイル
 								li.item
 									.m-btnSet01
-										a(href="")
-											span ボタン
+										a(href="#sample")
+											span ページ内リンク
+								li.item
+									.m-btnSet01
+										a(href="index.html#sample")
+											span ＃付きリンク
 								li.item
 									.m-btnSet01
 										a(href="" target="_blank")
-											span ボタン
+											span ターゲットブランク
 
 					+l-markupBlock
 						+p-markupBtn('pug').
-							.c-imageSet
+							.c-btnSet
 								ul.box (.is-two / .is-three / .is-four)
 									li.item.m-btnSet01
 										a(href="")
@@ -514,43 +559,7 @@ block contents
 
 						+p-markupBtn('stylus')
 							include ../stylus/_include/_components/_c_pagerSet.styl
-	
-		+l-columnBox
-			+l-contentsWidth
-				+l-mqWrapper
-					h2.m-markupTitle
-						span アコーディオン
-					+l-markupBlock
-						.js-accordion
-							p.js-accordion-parent.is-open タイトル01
-							p.js-accordion-child テキスト01
-							p.js-accordion-parent タイトル02
-							p.js-accordion-child テキスト02
-							p.js-accordion-parent タイトル03
-							p.js-accordion-child テキスト03
 
-					+l-markupBlock
-						+p-markupBtn('pug').
-							.js-accordion
-								.js-accordion-parent クリック要素（.is-openで展開）
-								.js-accordion-child アコーディオン要素
-						
-						+p-markupBtn('js').
-							const accordionSet = require('../_modules/accordionSet.js');
-
-							//DOM読み込み後に入れる
-							accordionSet({
-								target: '.js-accordion', // 要素名
-								parentName: '.js-accordion-parent', // クリック要素名
-								childName: '.js-accordion-child', // アコーディオン要素名
-								speed: 300, // 速度
-								timing: 'ease', // タイミング
-								linkage: true, // アコーディオン連動
-								collapsible: true, // 折りたたみ有効
-								setBefore: function() {},
-								setAfter: function() {},
-								animationAfter: function() {},
-							});
 
 		+l-columnBox
 			+l-contentsWidth
@@ -1078,4 +1087,39 @@ block contents
 							//DOM読み込み後に入れる
 							spTellLink('.js-tellLink', op);
 
-		
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span アコーディオン
+					+l-markupBlock
+						.js-accordion
+							p.js-accordion-parent.is-open タイトル01
+							p.js-accordion-child テキスト01
+							p.js-accordion-parent タイトル02
+							p.js-accordion-child テキスト02
+							p.js-accordion-parent タイトル03
+							p.js-accordion-child テキスト03
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.js-accordion
+								.js-accordion-parent クリック要素（.is-openで展開）
+								.js-accordion-child アコーディオン要素
+						
+						+p-markupBtn('js').
+							const accordionSet = require('../_modules/accordionSet.js');
+
+							//DOM読み込み後に入れる
+							accordionSet({
+								target: '.js-accordion', // 要素名
+								parentName: '.js-accordion-parent', // クリック要素名
+								childName: '.js-accordion-child', // アコーディオン要素名
+								speed: 300, // 速度
+								timing: 'ease', // タイミング
+								linkage: true, // アコーディオン連動
+								collapsible: true, // 折りたたみ有効
+								setBefore: function() {},
+								setAfter: function() {},
+								animationAfter: function() {},
+							});

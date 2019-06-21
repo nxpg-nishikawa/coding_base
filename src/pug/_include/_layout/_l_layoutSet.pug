@@ -27,9 +27,10 @@ mixin l-splitSet
 		block
 
 mixin p-markupBtn(text)
-	p.p-markupBtn(class= text)
-		!= text
-	.source
-		pre
-			code
-				block
+	.js-accordion
+		p.p-markupBtn.js-accordion-parent(class= text)
+			!= text
+		.source.js-accordion-child
+			pre
+				code
+					block
