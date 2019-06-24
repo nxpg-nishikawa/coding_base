@@ -39,7 +39,7 @@ body
 	input, select, textarea, button
 		fontSet();
 	
-	+MQ(SP_RES_WID)
+	+MQ_SP(SP_RES_WID)
 		min-width: SP_CT_WID;
 		width: 100%;
 
@@ -53,12 +53,4 @@ a
 		text-decoration: none
 	&:focus
 		outline none
-		
-.is-sp
-	display none !important
-
-	+MQ(SP_RES_WID)
-		display block !important
-		& + .is-pc
-			display none !important
 

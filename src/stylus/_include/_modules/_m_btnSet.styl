@@ -12,7 +12,7 @@
 		box-sizing border-box
 		text-decoration none
 
-		@extend .iconSet
+		iconSet()
 
 		&:after
 			content ""
@@ -21,10 +21,11 @@
 			top 50%
 			right 10px
 
-			width 11px
-			height 8px
+			width 16px
+			height 16px
+			margin 0 !important
 
-			background-image url('../images/common/common_icon_arrow01.png')
+			background-image url('../images/common/common_icon_arrow01.svg')
 			background-repeat no-repeat
 			background-size cover
 

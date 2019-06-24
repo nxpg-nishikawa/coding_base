@@ -1,40 +1,39 @@
 .c-imageText
+	PADDING = 20px
 	marginBottom(60)
 
-	+MQ(SP_RES_WID)
-		display block !important
-
 	&.is-imageRight
-		display flex
-		.imageBlock
-			order 1
-			padding-left 20px
+		+MQ_PC(SP_RES_WID)
+			display flex
+			.imageBlock
+				order 1
+				padding-left PADDING
 
 	&.is-imageLeft
-		display flex
-		.imageBlock
-			padding-right 20px
+		+MQ_PC(SP_RES_WID)
+			display flex
+			.imageBlock
+				padding-right PADDING
 	
 	&.is-imageCenter
 		.imageBlock
-			margin-bottom 20px
+			margin-bottom PADDING
 			text-align center
 
 			figcaption
 				text-align left
 			
 	.imageBlock
-		
-		+MQ(SP_RES_WID)
-			width 100% !important
-			padding 0 !important
+		+MQ_SP(SP_RES_WID)
+			width 100%
+			padding 0
 	
 	
 	.m-imageSet
-		+MQ(SP_RES_WID)
-			width 100% !important
+		+MQ_SP(SP_RES_WID)
+			width 100%
 		
 		img
 			max-width inherit
-			+MQ(SP_RES_WID)
+			+MQ_SP(SP_RES_WID)
 				max-width 100%

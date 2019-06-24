@@ -13,6 +13,20 @@ MQ_SET(prop, width){
 	}
 }
 
+MQ_SP(maxWidth){
+	@media screen and (max-width: maxWidth) {
+		{block}
+	}
+	
+}
+
+MQ_PC(minWidth){
+	@media screen and (min-width: minWidth) {
+		{block}
+	}
+	
+}
+
 HOVER(minWidth){
 	@media screen and (min-width: minWidth) {
 		&:hover {
@@ -45,7 +59,7 @@ fontSet()
 	line-height: 1.6;
 	-webkit-text-size-adjust: 100%;
 	
-	+MQ(SP_RES_WID)
+	+MQ_SP(SP_RES_WID)
 		fontSize(13);
 		
 fontSize(size) {
@@ -78,6 +92,6 @@ marginBottom(MARGIN)
 	margin-bottom MARGIN * 1px
 	lastReset()
 
-	+MQ(SP_RES_WID)
+	+MQ_SP(SP_RES_WID)
 		margin-bottom (MARGIN / 2) * 1px
 

@@ -50,55 +50,66 @@ block contents
 								include ../stylus/_include/_layout/_l_bgBlock.styl
 
 
-		+l-columnBox
-			+l-contentsWidth
-				+l-mqWrapper
-					h2.m-markupTitle
-						span 分割レイアウト
 
-					+l-markupBlock
-						+l-splitSet
-							.box.is-two
-								.item
-									.defaultSet
-										p!= DUMMY_TEXT_400
-								.item
-									.defaultSet
-										p!= DUMMY_TEXT_200
 
-					+l-markupBlock
-						+p-markupBtn('pug').
-							+l-splitSet
-								.box (.is-two / .is-three / .is-four)
-									.item
-										コンテンツ
-						
-						+p-markupBtn('stylus')
-							include ../stylus/_include/_layout/_l_splitSet.styl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 	+l-columnBlock
 		h3.m-title-bg01
-			span コンポーネント
+			span 基本コンポーネント
 
 		+l-columnBox
 			+l-contentsWidth
 				+l-mqWrapper
 					h2.m-markupTitle
-						span ヘッダー01
+						span 分割セット
 
 					+l-markupBlock
-		
-		+l-columnBox
-			+l-contentsWidth
-				+l-mqWrapper
-					h2.m-markupTitle
-						span フッター01
+						.c-colSet.is-two
+							.col
+								.defaultSet
+									p!= DUMMY_TEXT_200
+							.col
+								.c-colSet.is-three
+									.col
+										.defaultSet
+											p!= DUMMY_TEXT_100
+									.col
+										.defaultSet
+											p!= DUMMY_TEXT_100
+									.col
+										.defaultSet
+											p!= DUMMY_TEXT_100
 
 					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-colSet (.is-two / .is-three / .is-four)
+								.col
+									コンテンツ
 						
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_colSet.styl
+
+
 
 		+l-columnBox
 			+l-contentsWidth
@@ -133,60 +144,6 @@ block contents
 							include ../stylus/_include/_components/_c_imageText.styl
 
 
-		+l-columnBox
-			+l-contentsWidth
-				+l-mqWrapper
-					h2.m-markupTitle
-						span 画像コンポーネント01
-					
-					+l-markupBlock
-						.c-imageSet
-							ul.box.is-three
-								li.item
-									.m-imageSet
-										p.image
-											img(src="https://placehold.jp/375x232.png", alt="")
-										.defaultSet
-											p!= DUMMY_TEXT_50
-								li.item
-									.m-imageSet
-										p.image
-											img(src="https://placehold.jp/375x232.png", alt="")
-										.defaultSet
-											p!= DUMMY_TEXT_50
-								li.item
-									.m-imageSet
-										p.image
-											img(src="https://placehold.jp/375x232.png", alt="")
-										.defaultSet
-											p!= DUMMY_TEXT_50
-								li.item
-									.m-imageSet
-										p.image
-											img(src="https://placehold.jp/375x232.png", alt="")
-										.defaultSet
-											p!= DUMMY_TEXT_50
-								li.item
-									.m-imageSet
-										p.image
-											img(src="https://placehold.jp/375x232.png", alt="")
-										.defaultSet
-											p!= DUMMY_TEXT_50
-
-					+l-markupBlock
-						+p-markupBtn('pug').
-							.c-imageComponent
-								ul.box (.is-two / .is-three / .is-four)
-									li.item
-										.m-imageSet
-											p.image
-												img(src="画像", alt="")
-											.defaultSet
-												p!= テキスト
-
-						+p-markupBtn('stylus')
-							include ../stylus/_include/_components/_c_imageSet.styl
-
 
 		+l-columnBox
 			+l-contentsWidth
@@ -212,6 +169,64 @@ block contents
 						+p-markupBtn('stylus')
 							include ../stylus/_include/_components/_c_imageBgSet.styl
 
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 画像コンポーネント01
+					
+					+l-markupBlock
+						.c-imageSet
+							ul.c-colSet.is-three
+								li.col
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.col
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.col
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.col
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+								li.col
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/375x232.png", alt="")
+										.defaultSet
+											p!= DUMMY_TEXT_50
+
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-imageComponent
+								ul.box (.is-two / .is-three / .is-four)
+									li.item
+										.m-imageSet
+											p.image
+												img(src="画像", alt="")
+											.defaultSet
+												p!= テキスト
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_imageSet.styl
+
+
+
+
 		+l-columnBox
 			+l-contentsWidth
 				+l-mqWrapper
@@ -220,28 +235,28 @@ block contents
 					
 					+l-markupBlock
 						.c-btnSet
-							ul.box.is-three
-								li.item
+							ul.c-colSet.is-three
+								li.col
 									.m-btnSet01
 										a(href="")
 											span 通常ボタン
-								li.item
+								li.col
 									.m-btnSet01
 										a(href=".pdf")
 											span pdfファイル
-								li.item
+								li.col
 									.m-btnSet01
 										a(href=".doc")
 											span その他ファイル
-								li.item
+								li.col
 									.m-btnSet01
 										a(href="#sample")
 											span ページ内リンク
-								li.item
+								li.col
 									.m-btnSet01
 										a(href="index.html#sample")
 											span ＃付きリンク
-								li.item
+								li.col
 									.m-btnSet01
 										a(href="" target="_blank")
 											span ターゲットブランク
@@ -256,6 +271,474 @@ block contents
 
 						+p-markupBtn('stylus')
 							include ../stylus/_include/_components/_c_imageSet.styl
+
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span テーブルセット
+					+l-markupBlock
+						.c-tableSet
+							table
+								thead
+									tr
+										th テキスト
+										th テキスト
+										th テキスト
+								tbody
+									tr
+										th テキスト
+										td テキスト
+										td テキスト
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-tableSet
+								table
+									thead
+										tr
+											th テキスト
+									tbody
+										tr
+											th テキスト
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_tableSet.styl
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ページャーセット
+					+l-markupBlock
+						.c-pagerSet
+							ul
+								li
+									.box
+										span 1
+								li
+									a(href="")
+										.box
+											span 2
+								li
+									a(href="")
+										.box
+											span 3
+								li
+									a(href="")
+										.box
+											span 4
+								li
+									a(href="")
+										.box
+											span 5
+					+l-markupBlock
+						+p-markupBtn('pug').
+							.c-pagerSet
+								ul
+									li
+										.box
+											span 1
+									li
+										a(href="")
+											.box
+												span 2
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_components/_c_pagerSet.styl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	+l-columnBlock
+		h3.m-title-bg01
+			span 複合コンポーネント
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ヘッダー01
+
+			+l-markupBlock
+				header.c-comHeader01
+					+l-contentsWidth
+						.contentsArea
+							.logoBlock
+								h1.logo
+									span
+										img(src="https://placehold.jp/200x70.png", alt="")
+							.navBlock
+								.subNavArea
+									.m-inputText
+										input(type="text")
+									nav.subNav
+										ul
+											li
+												a(href="")
+													span サブナビ1
+											li
+												a(href="")
+													span サブナビ2
+											li
+												a(href="")
+													span サブナビ3
+								.globalNavArea
+									nav.globalNav
+										ul
+											li
+												a(href="")
+													span ナビゲーション1
+												.childNav
+													+l-contentsWidth
+														ul.c-colSet.is-six
+															li.col
+																a(href="")
+																	span 子ナビ1
+															li.col
+																a(href="")
+																	span 子ナビ2
+															li.col
+																a(href="")
+																	span 子ナビ3
+															li.col
+																a(href="")
+																	span 子ナビ4
+															li.col
+																a(href="")
+																	span 子ナビ5
+															li.col
+																a(href="")
+																	span 子ナビ6
+											li
+												a(href="")
+													span ナビゲーション2
+												.childNav
+													+l-contentsWidth
+														ul.c-colSet.is-six
+															li.col
+																a(href="")
+																	span 子ナビ1
+															li.col
+																a(href="")
+																	span 子ナビ2
+															li.col
+																a(href="")
+																	span 子ナビ3
+															li.col
+																a(href="")
+																	span 子ナビ4
+											li
+												a(href="")
+													span ナビゲーション3
+											li
+												a(href="")
+													span ナビゲーション4
+											li
+												a(href="")
+													span ナビゲーション5
+			+l-markupBlock
+				+l-contentsWidth
+					+p-markupBtn('pug').
+						header.c-comHeader01
+							+l-contentsWidth
+								.contentsArea
+									.logoBlock
+										h1.logo
+											span
+												img(src="https://placehold.jp/200x70.png", alt="")
+									.navBlock
+										.subNavArea
+											.m-inputText
+												input(type="text")
+											nav.subNav
+												ul
+													li
+														a(href="")
+															span サブナビ1
+													li
+														a(href="")
+															span サブナビ2
+													li
+														a(href="")
+															span サブナビ3
+										.globalNavArea
+											nav.globalNav
+												ul
+													li
+														a(href="")
+															span ナビゲーション1
+														.childNav
+															+l-contentsWidth
+																ul.c-colSet.is-six
+																	li.col
+																		a(href="")
+																			span 子ナビ1
+																	li.col
+																		a(href="")
+																			span 子ナビ2
+																	li.col
+																		a(href="")
+																			span 子ナビ3
+																	li.col
+																		a(href="")
+																			span 子ナビ4
+																	li.col
+																		a(href="")
+																			span 子ナビ5
+																	li.col
+																		a(href="")
+																			span 子ナビ6
+													li
+														a(href="")
+															span ナビゲーション2
+														.childNav
+															+l-contentsWidth
+																ul.c-colSet.is-six
+																	li.col
+																		a(href="")
+																			span 子ナビ1
+																	li.col
+																		a(href="")
+																			span 子ナビ2
+																	li.col
+																		a(href="")
+																			span 子ナビ3
+																	li.col
+																		a(href="")
+																			span 子ナビ4
+													li
+														a(href="")
+															span ナビゲーション3
+													li
+														a(href="")
+															span ナビゲーション4
+													li
+														a(href="")
+															span ナビゲーション5
+
+					+p-markupBtn('stylus')
+						include ../stylus/_include/_components/_c_comHeader01.styl
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span フッター01
+
+			+l-markupBlock
+				footer.c-comFooter01
+					.navBlock
+						+l-contentsWidth
+							nav.footerNav
+								ul.c-colSet.is-five
+									li.col
+										a(href="")
+											span ナビゲーション1
+										.childNav
+											ul
+												li
+													a(href="")
+														span 子ナビ1
+												li
+													a(href="")
+														span 子ナビ2
+												li
+													a(href="")
+														span 子ナビ3
+												li
+													a(href="")
+														span 子ナビ4
+												li
+													a(href="")
+														span 子ナビ5
+												li
+													a(href="")
+														span 子ナビ6
+									li.col
+										a(href="")
+											span ナビゲーション2
+										.childNav
+											ul
+												li
+													a(href="")
+														span 子ナビ1
+												li
+													a(href="")
+														span 子ナビ2
+												li
+													a(href="")
+														span 子ナビ3
+									li.col
+										a(href="")
+											span ナビゲーション3
+										.childNav
+											ul
+												li
+													a(href="")
+														span 子ナビ1
+												li
+													a(href="")
+														span 子ナビ2
+												li
+													a(href="")
+														span 子ナビ3
+									li.col
+										a(href="")
+											span ナビゲーション4
+										.childNav
+											ul
+												li
+													a(href="")
+														span 子ナビ1
+												li
+													a(href="")
+														span 子ナビ2
+												li
+													a(href="")
+														span 子ナビ3
+									li.col
+										a(href="")
+											span ナビゲーション5
+										.childNav
+											ul
+												li
+													a(href="")
+														span 子ナビ1
+												li
+													a(href="")
+														span 子ナビ2
+												li
+													a(href="")
+														span 子ナビ3
+					.copyBlock
+						+l-contentsWidth
+							p copyright xxxxxxxxxxxxxxxxxxxxxxx
+
+			+l-markupBlock
+				+l-contentsWidth
+					+p-markupBtn('pug').
+						footer.c-comFooter01
+							.navBlock
+								+l-contentsWidth
+									nav.footerNav
+										ul.c-colSet.is-five
+											li.col
+												a(href="")
+													span ナビゲーション1
+												.childNav
+													ul
+														li
+															a(href="")
+																span 子ナビ1
+														li
+															a(href="")
+																span 子ナビ2
+														li
+															a(href="")
+																span 子ナビ3
+														li
+															a(href="")
+																span 子ナビ4
+														li
+															a(href="")
+																span 子ナビ5
+														li
+															a(href="")
+																span 子ナビ6
+											li.col
+												a(href="")
+													span ナビゲーション2
+												.childNav
+													ul
+														li
+															a(href="")
+																span 子ナビ1
+														li
+															a(href="")
+																span 子ナビ2
+														li
+															a(href="")
+																span 子ナビ3
+											li.col
+												a(href="")
+													span ナビゲーション3
+												.childNav
+													ul
+														li
+															a(href="")
+																span 子ナビ1
+														li
+															a(href="")
+																span 子ナビ2
+														li
+															a(href="")
+																span 子ナビ3
+											li.col
+												a(href="")
+													span ナビゲーション4
+												.childNav
+													ul
+														li
+															a(href="")
+																span 子ナビ1
+														li
+															a(href="")
+																span 子ナビ2
+														li
+															a(href="")
+																span 子ナビ3
+											li.col
+												a(href="")
+													span ナビゲーション5
+												.childNav
+													ul
+														li
+															a(href="")
+																span 子ナビ1
+														li
+															a(href="")
+																span 子ナビ2
+														li
+															a(href="")
+																span 子ナビ3
+							.copyBlock
+								+l-contentsWidth
+									p copyright xxxxxxxxxxxxxxxxxxxxxxx
+					+p-markupBtn('stylus')
+						include ../stylus/_include/_components/_c_comFooter01.styl
+
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span メインビジュアル01
 
 
 
@@ -486,81 +969,6 @@ block contents
 
 
 
-
-		+l-columnBox
-			+l-contentsWidth
-				+l-mqWrapper
-					h2.m-markupTitle
-						span テーブルセット
-					+l-markupBlock
-						.c-tableSet
-							table
-								thead
-									tr
-										th テキスト
-										th テキスト
-										th テキスト
-								tbody
-									tr
-										th テキスト
-										td テキスト
-										td テキスト
-					+l-markupBlock
-						+p-markupBtn('pug').
-							.c-tableSet
-								table
-									thead
-										tr
-											th テキスト
-									tbody
-										tr
-											th テキスト
-						+p-markupBtn('stylus')
-							include ../stylus/_include/_components/_c_tableSet.styl
-
-		+l-columnBox
-			+l-contentsWidth
-				+l-mqWrapper
-					h2.m-markupTitle
-						span ページャーセット
-					+l-markupBlock
-						.c-pagerSet
-							ul
-								li
-									.box
-										span 1
-								li
-									a(href="")
-										.box
-											span 2
-								li
-									a(href="")
-										.box
-											span 3
-								li
-									a(href="")
-										.box
-											span 4
-								li
-									a(href="")
-										.box
-											span 5
-					+l-markupBlock
-						+p-markupBtn('pug').
-							.c-pagerSet
-								ul
-									li
-										.box
-											span 1
-									li
-										a(href="")
-											.box
-												span 2
-
-						+p-markupBtn('stylus')
-							include ../stylus/_include/_components/_c_pagerSet.styl
-
-
 		+l-columnBox
 			+l-contentsWidth
 				+l-mqWrapper
@@ -609,7 +1017,25 @@ block contents
 
 						+p-markupBtn('stylus')
 							include ../stylus/_include/_components/_c_qandaSet.styl
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	+l-columnBlock
 		h3.m-title-bg01
@@ -667,27 +1093,83 @@ block contents
 							ul.is-disc
 								li
 									a(href="sample.pdf")
-										span pdfアイコン
+										span pdfファイル
 								li
 									a(href="sample.doc")
-										span その他アイコン
+										span ワードファイル
 								li
-									a(href="" target="_blank")
-										span 外部リンクアイコン
-								
+									a(href="sample.xls")
+										span エクセルファイル
+								li
+									a(href="sample.ppt")
+										span パワーポイントファイル
+								li
+									a(href="sample.mp3")
+										span 音楽ファイル
+								li
+									a(href="sample.mp4")
+										span 動画ファイル
+								li
+									a(href="sample.rtf")
+										span その他ファイル
+								li
+									a(href="sample.html" target="_blank")
+										span 外部リンク
+
 					
 					+l-markupBlock
 						+p-markupBtn('pug').
 							a(href="sample.pdf")
-								span pdfアイコン
+								span pdfファイル
 							a(href="sample.doc")
-								span その他アイコン
+								span その他ファイル
 							a(href="" target="_blank")
-								span 外部リンクアイコン
+								span 外部リンクファイル
 
 						+p-markupBtn('stylus')
 							include ../stylus/_include/_settings/_s_iconSet.styl
 
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span pc sp 切り替え
+
+					+l-markupBlock
+						.is-sp
+							.m-imageSet
+								figure.image
+									img(src="https://placehold.jp/640x400.png", alt="")
+									figcaption spのみ表示されます
+						.is-pc
+							.m-imageSet
+								figure.image
+									img(src="https://placehold.jp/960x150.png", alt="")
+									figcaption pcのみ表示されます
+						
+						.is-pcOnly
+							.m-imageSet
+								figure.image
+									img(src="https://placehold.jp/960x20.png", alt="")
+									figcaption pcのみ表示されます
+					
+					+l-markupBlock
+						+p-markupBtn('pug').
+							// pcとspで切り替え表示
+							.is-sp
+								spのとき表示したい要素（必ずis-pcの前に書く）
+							.is-pc
+								pcのとき表示したい要素
+
+							// pcのみ、spのみ表示
+							.is-pcOnly
+								pcのとき表示したい要素
+							.is-spOnly
+								spのとき表示したい要素
+
+						+p-markupBtn('stylus')
+							include ../stylus/_include/_modules/_m_responsiveChange.styl
 
 
 		+l-columnBox
@@ -1002,9 +1484,80 @@ block contents
 
 
 
+
+
+
+
+
+
+
+
+	+l-columnBlock
+		h3.m-title-bg01
+			span cssアニメーション
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span 背景色01
+		
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ボーダーボトム01
+
+		
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span ズーム01
+		
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span アイコン01
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	+l-columnBlock
 		h3.m-title-bg01
 			span js
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span スライダー
+
+
+
+		+l-columnBox
+			+l-contentsWidth
+				+l-mqWrapper
+					h2.m-markupTitle
+						span モーダル
+
+
 
 		+l-columnBox
 			+l-contentsWidth
@@ -1013,22 +1566,21 @@ block contents
 						span 高さを揃える(matchHeight)
 				
 					+l-markupBlock
-						+l-splitSet
-							.box.is-two
-								.item
-									.defaultSet
-										p.js-matchHeight タイトルが入ります
-											br
-											| タイトルが入りますタイトルが入りますタイトルが入ります
-										.m-imageSet
-											p.image
-												img(src="https://placehold.jp/150x150.png", alt="")
-								.item
-									.defaultSet
-										p.js-matchHeight タイトルが入ります
-										.m-imageSet
-											p.image
-												img(src="https://placehold.jp/150x150.png", alt="")
+						.c-colSet.is-two
+							.col
+								.defaultSet
+									p.js-matchHeight タイトルが入ります
+										br
+										| タイトルが入りますタイトルが入りますタイトルが入ります
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/150x150.png", alt="")
+							.col
+								.defaultSet
+									p.js-matchHeight タイトルが入ります
+									.m-imageSet
+										p.image
+											img(src="https://placehold.jp/150x150.png", alt="")
 
 					+l-markupBlock
 						+p-markupBtn('pug').

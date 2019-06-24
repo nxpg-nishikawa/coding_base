@@ -1,0 +1,112 @@
+
+.c-colSet
+	SP_MARGIN = 10px
+	PC_MARGIN = 10px
+	
+	flexBox()
+
+	&:first-child
+		margin-top 0
+
+	&.is-two
+		&>.col
+			width "calc(50% - %s)" % (PC_MARGIN / 2)
+			+MQ_PC(SP_RES_WID)
+				margin-right "%s" % ((PC_MARGIN / 2) *2)
+			+MQ_SP(SP_RES_WID)
+				width 100%
+			&:nth-of-type(n + 2)
+				+MQ_SP(SP_RES_WID)
+					margin-top SP_MARGIN
+			&:nth-of-type(n + 3)
+				margin-top PC_MARGIN
+			&:nth-of-type(2n)
+				+MQ_PC(SP_RES_WID)
+					margin-right 0
+
+	&.is-three
+		&>.col, &:before, &:after
+			width "calc(33.3% - %s)" % (PC_MARGIN / 2)
+			+MQ_SP(SP_RES_WID)
+				width 100%
+		&>.col
+			+MQ_PC(SP_RES_WID)
+				margin-right "%s" % ((PC_MARGIN / 2) *3 / 2)
+			&:nth-of-type(n + 2)
+				+MQ_SP(SP_RES_WID)
+					margin-top SP_MARGIN
+			&:nth-of-type(n + 4)
+				margin-top PC_MARGIN
+			&:nth-of-type(3n)
+				+MQ_PC(SP_RES_WID)
+					margin-right 0
+		&:before, &:after
+			order 1
+			content ""
+			display block
+
+	&.is-four
+		&>.col, &:before, &:after
+			width "calc(25% - %s)" % (PC_MARGIN / 2)
+			+MQ_SP(SP_RES_WID)
+				width "calc(50% - %s)" % (SP_MARGIN / 2)
+				
+		&>.col
+			+MQ_PC(SP_RES_WID)
+				margin-right "%s" % ((PC_MARGIN / 2) *4 / 3)
+			&:nth-of-type(n + 3)
+				+MQ_SP(SP_RES_WID)
+					margin-top SP_MARGIN
+			&:nth-of-type(n + 5)
+				margin-top PC_MARGIN
+			&:nth-of-type(4n)
+				+MQ_PC(SP_RES_WID)
+					margin-right 0
+		&:before, &:after
+			order 1
+			content ""
+			display block
+
+	&.is-five
+		&>.col, &:before, &:after
+			width "calc(20% - %s)" % (PC_MARGIN / 2)
+			+MQ_SP(SP_RES_WID)
+				width "calc(50% - %s)" % (SP_MARGIN / 2)
+				
+		&>.col
+			+MQ_PC(SP_RES_WID)
+				margin-right "%s" % ((PC_MARGIN / 2) *5 / 4)
+			&:nth-of-type(n + 3)
+				+MQ_SP(SP_RES_WID)
+					margin-top SP_MARGIN
+			&:nth-of-type(n + 6)
+				margin-top PC_MARGIN
+			&:nth-of-type(5n)
+				+MQ_PC(SP_RES_WID)
+					margin-right 0
+		&:before, &:after
+			order 1
+			content ""
+			display block
+
+	&.is-six
+		&>.col, &:before, &:after
+			width "calc(16.6% - %s)" % (PC_MARGIN / 2)
+			+MQ_SP(SP_RES_WID)
+				width "calc(50% - %s)" % (SP_MARGIN / 2)
+				
+		&>.col
+			+MQ_PC(SP_RES_WID)
+				margin-right "%s" % ((PC_MARGIN / 2) *6 / 5)
+			&:nth-of-type(n + 3)
+				+MQ_SP(SP_RES_WID)
+					margin-top SP_MARGIN
+			&:nth-of-type(n + 7)
+				margin-top PC_MARGIN
+			&:nth-of-type(6n)
+				+MQ_PC(SP_RES_WID)
+					margin-right 0
+		&:before, &:after
+			order 1
+			content ""
+			display block

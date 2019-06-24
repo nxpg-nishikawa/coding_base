@@ -1,46 +1,4 @@
 .c-imageSet
+	SP_MARGIN = 10px
+	PC_MARGIN = 10px
 	marginBottom(60)
-
-	.box
-		flexBox()
-		justify-content space-between
-		
-		&:before, &:after
-			order 1
-			content ""
-			display block
-
-		&:first-child
-			margin-top 0
-
-		&.is-two
-			.item
-				width calc(50% - 5px)
-
-				&:nth-of-type(n + 3)
-					margin-top 10px
-
-		&.is-three
-			.item, &:before, &:after
-				width calc(33.3% - 5px)
-			.item
-				&:nth-of-type(n + 4)
-					margin-top 10px
-					
-		&.is-four
-			.item, &:before, &:after
-				width calc(25% - 5px)
-			.item
-				+MQ(SP_RES_WID)
-					width calc(50% - 5px) !important
-
-				&:nth-of-type(n + 5)
-					margin-top 10px
-	
-	.item
-		margin 0
-		+MQ(SP_RES_WID)
-			width 100% !important
-
-			&:nth-of-type(n + 2)
-				margin-top 10px

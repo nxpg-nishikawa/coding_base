@@ -1,0 +1,116 @@
+header.c-comHeader01
+	position relative
+	padding-top 10px
+	+MQ_SP(SP_RES_WID)
+		padding 15px 15px 0
+
+	.contentsArea
+		+MQ_PC(SP_RES_WID)
+			flexBox()
+			justify-content space-between
+			align-items center
+
+	.logoBlock
+		+MQ_SP(SP_RES_WID)
+			padding-bottom 15px
+
+	.navBlock
+		+MQ_SP(SP_RES_WID)
+			display flex
+			// display none
+			flex-direction column
+			position absolute
+			left 0
+			width 100%
+			background-color #FFF
+
+	.subNavArea
+		+MQ_PC(SP_RES_WID)
+			flexBox()
+			justify-content flex-end
+			align-items center
+			margin-bottom 1.5em
+		
+		+MQ_SP(SP_RES_WID)
+			order 1
+			padding 15px
+
+		.subNav
+			+MQ_PC(SP_RES_WID)
+				margin-left 1.5em
+				ul
+					flexBox()
+					justify-content flex-end
+
+				li
+					margin-left 1.0em
+					fontSize(13)
+					&:first-child
+						margin-left 0
+				
+				a
+					display block
+					color inherit
+					text-decoration none
+					line-height 1.0
+
+			+MQ_SP(SP_RES_WID)
+				ul
+					flexBox()
+				li
+					margin-right 10px
+
+		.m-inputText
+			+MQ_SP(SP_RES_WID)
+				margin-bottom 10px
+
+	.globalNavArea
+		+MQ_SP(SP_RES_WID)
+			order 0
+		.globalNav
+			+MQ_PC(SP_RES_WID)
+				& > ul
+					flexBox()
+					justify-content flex-end
+					& > li
+						margin-left 1.5em
+						padding-left 1.5em
+						border-left 1px solid #dfdfdf
+						&:first-child
+							margin-left 0
+							padding-left 0
+							border-left none
+						& > a
+							padding 0.5em 0
+							&:hover
+								&+.childNav
+									display block
+			+MQ_SP(SP_RES_WID)
+				& > ul
+					& > li
+						& > a
+							padding 15px
+							background-color #dfdfdf
+		.childNav
+			+MQ_PC(SP_RES_WID)
+				display none
+				position absolute
+				left 0
+				width 100%
+				background-color #dfdfdf
+
+				ul
+					position relative
+					z-index 1
+				a
+					padding 1.5em 0.5em
+
+			+MQ_SP(SP_RES_WID)
+				padding 15px
+				background-color #cfcfcf
+				
+		a
+			display block
+			color inherit
+			text-decoration none
+			line-height 1.0
